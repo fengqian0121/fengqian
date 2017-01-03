@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Ruby Feng</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content="冯茜,Ruby,Ruby Feng,rubyfeng" />
+		<meta name="Description" content="冯茜,Ruby,Ruby Feng,Feng,rubyfeng" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<style type="text/css">
+			body{
+				font-family:"Arial"	
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Ruby Feng</h1>
+							<p>Freedom Engineer</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+				
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Advice Column</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" style="height:29.65em">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Hello! Dear friends, I'm <strong>Ruby</strong>. <br /> <br />
+								Welcome to my website!</h2>
+								<p>Here you can read and speak freely,<br />
+								to find some useful informations and great ideas .</p>
+							</header>
+<!-- 
+							 <footer>
+								<a href="#portfolio" class="button scrolly">SIGN IN</a>
+							</footer>  -->
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+
+							<p style="margin-bottom: 1em">You can find several columns here.You can click every column you like to read some related articles I have published.
+							Of course,you can comment on these articles with your own idea or some emoticons.I will be very
+							happy to see your comments.
+							 </p>
+
+							<div class="row">
+							<#list columnList as column>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="/articleList?id=${column.id}" class="image fit"><img src="${column.column_img}" alt="" /></a>
+										<header>
+											<h3><a href="/articleList?id=${column.id}">${column.column_name}</a></h3>
+										</header>
+									</article>
+								</div>
+							</#list>	
+<!-- 								 <div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/other.png" alt="" /></a>
+										<header>
+											<h3>Other</h3>
+										</header>
+									</article>
+								</div>   -->
+							</div>
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic.jpg" alt="" /></a>
+
+							<p>I was born in 1994.1.21, I am from ShanXi province but now I work in BeiJing as a programmer.In my spare time,
+							I like to write some essays to record my life ,my thoughts,my friends,my travel experiences and some problems in the life and work.
+							I want to share my experiences to you,hope these articles can resonate with you and helpful for you.
+							 </p>
+
+						</div>
+					</section>
+
+				<!-- Advice -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Advice Column</h2>
+							</header>
+
+							<p  style="margin-bottom: 1em">This is advice column.If you have some advices or good ideas ,welcome to write down here and send it to me. 
+								It's my pleasure to receive your advices.And thankful for your advices.
+							</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" maxlength="10"/></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="phone" placeholder="Phone" maxlength="11"/></div>
+									<div class="12u$">
+										<textarea name="message" id="msg" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="button" value="Send Message" id="sendMsg"/>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+			
+		<div class="tanchuangBox">
+			<div class="tanchuang"></div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="js/common.util.js"></script>
+			<script src="js/web.js"></script>
+	</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发布文章</title>
+<meta name="description"
+	content="Sidebar Transitions: Transition effects for off-canvas views" />
+<meta name="keywords"
+	content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/js/jquery.fileupload.js"></script>
+<link rel="stylesheet" href="/js/editor/themes/default/default.css" />
+<link rel="stylesheet" href="/js/editor/plugins/code/prettify.css" />
+<script charset="utf-8" src="/js/editor/kindeditor.js"></script>
+<script charset="utf-8" src="/js/editor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="/js/editor/plugins/code/prettify.js"></script>
+<script src="/js/classie.js"></script>
+<script src="/js/sidebarEffects.js"></script>
+<script src="/js/admin.js"></script>
+<script>
+	KindEditor.ready(function(K) {
+		var editor = K.create('textarea[id="content"]', {
+			uploadJson : '/admin/uploadImg2', //指定上传图片的服务器端程序
+			allowUpload : true,
+			urlType : 'absolute',
+			//文本框不可拖动
+			resizeType : 2,
+			afterBlur : function() {
+				this.sync();
+			},
+			afterUpload : function(url) {
+				//上传图片之后
+			}
+
+		});
+	});
+</script>
+<style>
+.column {
+	margin: 60px auto;
+	float: none;
+	text-align: center;
+	width: 75%;
+	min-height: 100px;
+}
+</style>
+<script src="/js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div id="st-container" class="st-container">
+
+		<nav class="st-menu st-effect-11" id="menu-11">
+			<h2 class="icon icon-lab">Mag Center</h2>
+			<ul>
+				<li><a class="icon icon-data" href="index.html">Person
+						Center</a></li>
+				<li><a class="icon icon-location" href="showUsers">User
+						Information</a></li>
+				<li><a class="icon icon-study" href="showColumns">Column
+						Management</a></li>
+				<li><a class="icon icon-photo" href="showArticles">Article
+						Management</a></li>
+				<li><a class="icon icon-wallet" href="showAdvice">Advice
+						Information</a></li>
+			</ul>
+		</nav>
+
+		<!-- content push wrapper -->
+		<div class="st-pusher">
+			<div class="st-content">
+				<div class="st-content-inner">
+					<header class="codrops-header">
+						<h1>黎巴嫩的少女站在利比亚的街</h1>
+					</header>
+					<form method="post" class="form-horizontal" id="form1">
+
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">标题</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder=""
+									id="title">
+							</div>
+						</div>
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">所属栏目</label>
+							<div class="col-sm-6">
+								<select class="form-control" id="column">
+									 <#list columnList as column>
+									<option value="${column.id}" id="column_${column.id}">${column.column_name}</option> 
+									</#list>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">图片</label>
+							<div class="col-sm-6">
+								<img id="bag_b1" src="" data-holder-rendered="true"
+									style="width: 310px; height: 183px" /> <input type="file"
+									id="b1" accept="image/png,image/jpeg" /> <input type="hidden"
+									id="b1_img" value="" /> <br />
+							</div>
+						</div> 
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">内容</label>
+							<div class="col-sm-6">
+								<textarea name="content" id="content"
+									style="width: 700px; height: 400px; visibility: hidden;"></textarea>
+							</div>
+						</div>
+						<div class="container text-center">
+							<button type="button" class="buttoncss" id="addArticle">发布</button>
+							<button type="button" class="buttoncss" onclick="history.go(-1)">返回</button>
+							<br> <br> <span id="warn" style="color: red"></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

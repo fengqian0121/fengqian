@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建议信息</title>
+<meta name="description"
+	content="Sidebar Transitions: Transition effects for off-canvas views" />
+<meta name="keywords"
+	content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+<link rel="stylesheet" type="text/css" href="../css/component.css" />
+<style>
+.column {
+	margin: 60px auto;
+	float: none;
+	text-align: center;
+	width: 75%;
+	min-height: 100px;
+}
+</style>
+<script src="../js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div id="st-container" class="st-container">
+
+		<nav class="st-menu st-effect-11" id="menu-11">
+			<h2 class="icon icon-lab">Mag Center</h2>
+			<ul>
+					<li><a class="icon icon-data" href="index.html">Person Center</a></li>
+					<li><a class="icon icon-location" href="showUsers">User Information</a></li>
+					<li><a class="icon icon-study" href="showColumns">Column Management</a></li>
+					<li><a class="icon icon-photo" href="showArticles">Article Management</a></li>
+					<li><a class="icon icon-wallet" href="#">Advice Information</a></li>	
+			</ul>
+		</nav>
+
+		<!-- content push wrapper -->
+		<div class="st-pusher">
+			<div class="st-content">
+				、
+				<div class="st-content-inner">
+					<header class="codrops-header">
+						<h1>黎巴嫩的少女站在利比亚的街</h1>
+					</header>
+					<table class="gridtable">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>名字</th>
+								<th>联系方式</th>
+								<th>建议内容</th>
+								<th>提出时间</th>
+							</tr>
+						</thead>
+						<tbody>
+						<#if adviceList??>
+							<#list adviceList as advice>
+							<tr>
+								<td>${advice_index+1}</td>
+								<td>${advice.name}</td>
+								<td>${advice.phone}</td>
+								<td>${advice.advice}</td>
+								<td>${advice.create_time?string('yyyy-MM-dd HH:mm:ss')}</td>
+							</tr>
+							</#list>
+						</#if>	
+						</tbody>
+					</table>
+					<div class="main clearfix">
+						<div id="st-trigger-effects" class="column">
+							<button data-effect="st-effect-11">菜单栏</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/classie.js"></script>
+	<script src="../js/sidebarEffects.js"></script>
+</body>
+</html>

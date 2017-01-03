@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>Article List</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="../assets/js/jquery.min.js"></script>
+<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<script>
+	$(document).ready(function() {
+
+		$('body').on("click", '.heart', function() {
+
+			var A = $(this).attr("id");
+			var B = A.split("like");
+			var messageID = B[1];
+			var C = parseInt($("#likeCount" + messageID).html());
+			$(this).css("background-position", "")
+			var D = $(this).attr("rel");
+
+			if (D === 'like') {
+				$("#likeCount" + messageID).html(C + 1);
+				$(this).addClass("heartAnimation").attr("rel", "unlike");
+
+			} else {
+				$("#likeCount" + messageID).html(C - 1);
+				$(this).removeClass("heartAnimation").attr("rel", "like");
+				$(this).css("background-position", "left");
+			}
+
+		});
+
+	});
+</script>
+<style type="text/css">
+			body{
+				font-family:"Arial"	
+			}
+		</style>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<div id="header">
+
+		<div class="top">
+
+			<!-- Logo -->
+			<div id="logo">
+				<span class="image avatar48"><img src="../images/avatar.jpg"
+					alt="" /></span>
+				<h1 id="title">Ruby Feng</h1>
+				<p>Freedom Engineer</p>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+
+				<ul>
+					<li><a href="/#top" id="top-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+					<li><a href="/#portfolio" id="portfolio-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+					<li><a href="/#about" id="about-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-user">About
+								Me</span></a></li>
+					<li><a href="/#contact" id="contact-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-envelope">Advice
+								Column</span></a></li>
+				</ul>
+			</nav>
+
+		</div>
+
+		<div class="bottom"></div>
+
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+
+		<section id="about" class="three">
+			<div class="container">
+
+				<header>
+					<h2>${column.column_name}</h2>
+				<!-- 	<span> &lt;&lt; ${column.column_desc} &gt;&gt;</span> -->
+				</header>
+				<div class="row">
+					<#if articleList?? && (articleList?size>0)> <#list articleList as
+					article>
+					<div class="4u 12u$(mobile)">
+						<article class="item">
+							<a href="/articleInfo?id=${article.id}" class="image fit"><img
+								src="${article.img}" alt=""  style="height: 167px"/></a>
+							<header>
+								<h3>
+									<a href="/articleInfo?id=${article.id}">${article.title}</a>
+								<!-- 	<div class="heart" id="like${article.id}" rel="like">
+										<div class="likeCount" id="likeCount${article.id}">14</div>
+									</div> -->
+								</h3>
+							</header>
+						</article>
+					</div>
+
+					</#list> <#else>
+					<div class="4u$ 12u$(mobile)">
+						<article class="item">
+							<a href="#" class="image fit"><img src="images/other.png"
+								alt="" /></a>
+							<header>
+								<h3>暂无内容</h3>
+							</header>
+						</article>
+					</div>
+					</#if>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+
+		<!-- Copyright -->
+		<ul class="copyright">
+			<li>&copy; Untitled. All rights reserved.</li>
+			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/jquery.scrollzer.min.js"></script>
+	<script src="../assets/js/skel.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="../assets/js/main.js"></script>
+</body>
+</html>

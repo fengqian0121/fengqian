@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发布文章</title>
+<meta name="description"
+	content="Sidebar Transitions: Transition effects for off-canvas views" />
+<meta name="keywords"
+	content="transition, off-canvas, navigation, effect, 3d, css3, smooth" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+<link rel="stylesheet" type="text/css" href="../css/component.css" />
+<style>
+.column {
+	margin: 60px auto;
+	float: none;
+	text-align: center;
+	width: 75%;
+	min-height: 100px;
+}
+</style>
+<script src="../js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div id="st-container" class="st-container">
+
+		<nav class="st-menu st-effect-11" id="menu-11">
+			<h2 class="icon icon-lab">Mag Center</h2>
+			<ul>
+				<li><a class="icon icon-data" href="index.html">Person
+						Center</a></li>
+				<li><a class="icon icon-location" href="showUsers">User
+						Information</a></li>
+				<li><a class="icon icon-study" href="showColumns">Column
+						Management</a></li>
+				<li><a class="icon icon-photo" href="showArticles">Article
+						Management</a></li>
+				<li><a class="icon icon-wallet" href="showAdvice">Advice
+						Information</a></li>
+			</ul>
+		</nav>
+
+		<!-- content push wrapper -->
+		<div class="st-pusher">
+			<div class="st-content">
+				<div class="st-content-inner">
+					<header class="codrops-header">
+						<h1>黎巴嫩的少女站在利比亚的街</h1>
+					</header>
+					<form method="post" class="form-horizontal" id="form1">
+
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">栏目名称</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="" id="name"
+									value="${column.column_name}">
+							</div>
+						</div>
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">栏目描述</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="" id="desc"
+									value="${column.column_desc}">
+							</div>
+						</div>
+
+						<div class="form-group form-group-sm">
+							<label class="col-sm-4 control-label text-right">栏目图片</label>
+							<div class="col-sm-6">
+								<img id="bag_b1" src="${column.column_img}"
+									data-holder-rendered="true" style="width: 310px; height: 183px" />
+								<input type="file" id="b1" accept="image/png,image/jpeg" /> <input
+									type="hidden" id="b1_img" value="${column.column_img}" /> <br />
+							</div>
+						</div>
+						<input type="hidden" value="${column.id}" id="columnId"> <input
+							type="hidden" value="update" id="sql">
+						<div class="container text-center">
+							<button type="button" class="buttoncss" id="scl">修改</button>
+							<button type="button" class="buttoncss" onclick="history.go(-1)">返回</button>
+							<br>
+							<br> <span id="warn" style="color: red"></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/classie.js"></script>
+	<script src="../js/sidebarEffects.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="/js/jquery.fileupload.js"></script>
+	<script type="text/javascript" src="/js/admin.js"></script>
+</body>
+</html>
