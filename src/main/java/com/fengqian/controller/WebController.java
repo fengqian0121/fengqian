@@ -13,8 +13,10 @@ import com.jfinal.core.Controller;
  * @author fengqian
  */
 public class WebController extends Controller {
+	/**
+	 * 获取栏目
+	 * */
 	public void index() {
-		// 获取栏目
 		List<Column> columnList = Column.dao.find("select * from " + Column.TABLE_NAME+" where is_up=1");
 		this.setAttr("columnList", columnList);
 		this.render("index.html");
